@@ -691,6 +691,9 @@ You now have a web application in the cloud that can communicate bidirectionally
 -Including more IoT devices that publish to the same topic  
 -Creating your own front end to show trends over time of your IoT data  
 
+## Video Guide
+To see a step-by-step video guide, see this [video](https://amazon.awsapps.com/workdocs/index.html#/document/819bd727b0753e2c342dafda6d2796e5e6c541140644cdc9c6a92bb162f45a39).
+
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
