@@ -691,15 +691,6 @@ You now have a web application in the cloud that can communicate bidirectionally
 -Including more IoT devices that publish to the same topic  
 -Creating your own front end to show trends over time of your IoT data  
 
-## My Project
-
-TODO: Fill this README out!
-
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
-
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
