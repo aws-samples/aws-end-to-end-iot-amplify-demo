@@ -1,8 +1,8 @@
 # AWS End-to-End IoT Amplify Application in the Cloud
   
 ## Table of Contents  
-[Introduction](https://github.com/awsGruher/aws-end-to-end-iot-amplify-demo#introduction)  
-[Prerequisites](https://github.com/awsGruher/aws-end-to-end-iot-amplify-demo#prerequisites)  
+[Introduction](https://github.com/aws-samples/aws-end-to-end-iot-amplify-demo#introduction)  
+[Prerequisites](https://github.com/aws-samples/aws-end-to-end-iot-amplify-demo#prerequisites)  
 [Section I : IoT Setup](https://github.com/awsGruher/aws-end-to-end-iot-amplify-demo#Section-I--IoT-Setup)  
   - [Setting Up Your Device in AWS IoT Core](https://github.com/awsGruher/aws-end-to-end-iot-amplify-demo#Setting-Up-Your-Device-in-AWS-IoT-Core) 
   - [Configuring the ESP32](https://github.com/awsGruher/aws-end-to-end-iot-amplify-demo#Configuring-the-ESP32)  
