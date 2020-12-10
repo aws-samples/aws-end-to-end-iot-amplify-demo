@@ -24,7 +24,9 @@ In this demo, you will learn how to build a hosted web application in the cloud 
   3. Build a web application in the cloud using AWS Amplify that bidirectionally communciates with your ESP32  
   4. Apply this basic messaging application to fit your needs  
   
-By following this tutorial, you will setup the below architecture. This will make more sense as we go along.  
+By following this tutorial, you will setup the below architecture. This will make more sense as we go along.
+
+**Note: IMPORTANT** This is a demo only. This is not to be used in a production environment as-is. Please use this to learn and for helping build a demo or PoC only.
   
 ![AWS End-To-End IoT Web Application](https://github.com/aws-samples/aws-end-to-end-iot-amplify-demo/blob/master/iot_pictures/ProjectArch3.png)  
   
