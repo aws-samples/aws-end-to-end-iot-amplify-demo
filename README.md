@@ -1,14 +1,13 @@
 # AWS End-to-End IoT Amplify Application in the Cloud
 
 ## Table of Contents
-[Introduction](#introduction)
-[Prerequisites](#prerequisites)
-[Section I : IoT Setup](#section-i--iot-setup)
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Section I : IoT Setup](#section-i--iot-setup)
   - [Setting Up Your Device in AWS IoT Core](#setting-up-your-device-in-aws-iot-core)
   - [Configuring the ESP32](#configuring-the-esp32)
   - [Testing Your IoT Setup](#testing-your-iot-setup)
-
-[Section II : Amplify Setup](#section-ii--amplify-setup)
+- [Section II : Amplify Setup](#section-ii--amplify-setup)
   - [Setting Up AWS Amplify Application in the Cloud](#setting-up-aws-amplify-application-in-the-cloud)
   - [Creating Your AWS Amplify Application](#creating-your-aws-amplify-application)
   - [Add Authentication To Your Application](#add-authentication-to-your-application)
@@ -34,13 +33,13 @@ By following this tutorial, you will setup the below architecture. This will mak
 
 In order to get started, make sure you have the following:
 
-  1. A Mac/PC with admin access and internet connectivity
-  2. An AWS Account. A tutorial can be found [here.](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
-  3. An ESP32 DevKit. You can find them here: https://www.amazon.com/gp/product/B0811LGWY2/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1
-  4. A microUSB cable to connect the ESP32 to your computer
-    [MicroUSB to USB-C cable](https://www.amazon.com/gp/product/B01LONQ7R6/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
-    [MicroUSB to USB cable](https://www.amazon.com/AmazonBasics-Male-Micro-Cable-Black/dp/B07232M876/ref=sr_1_1_sspa?dchild=1&keywords=micro+usb+to+usb&qid=1595002180&s=electronics&sr=1-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzR0ZORUgxWTFHNVZEJmVuY3J5cHRlZElkPUEwODMyMjA2MTFMNzVBSlNUSFdEViZlbmNyeXB0ZWRBZElkPUEwODUwMDczM0RVWE5FVTZWSkRQViZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=)
-  5. The AWS CLI installed in your terminal or command shell. Follow the below tutorial on how to install the AWS CLI for your computer's operating system:
+1. A Mac/PC with admin access and internet connectivity
+2. An AWS Account. A tutorial can be found [here.](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+3. An ESP32 DevKit. You can find them here: https://www.amazon.com/gp/product/B0811LGWY2/ref=ppx_yo_dt_b_asin_title_o04_s00?ie=UTF8&psc=1
+4. A microUSB cable to connect the ESP32 to your computer
+  - [MicroUSB to USB-C cable](https://www.amazon.com/gp/product/B01LONQ7R6/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)
+  - [MicroUSB to USB cable](https://www.amazon.com/AmazonBasics-Male-Micro-Cable-Black/dp/B07232M876/ref=sr_1_1_sspa?dchild=1&keywords=micro+usb+to+usb&qid=1595002180&s=electronics&sr=1-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzR0ZORUgxWTFHNVZEJmVuY3J5cHRlZElkPUEwODMyMjA2MTFMNzVBSlNUSFdEViZlbmNyeXB0ZWRBZElkPUEwODUwMDczM0RVWE5FVTZWSkRQViZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=)
+5. The AWS CLI installed in your terminal or command shell. Follow the below tutorial on how to install the AWS CLI for your computer's operating system:
     https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 
 We will break down this tutorial into two main sections, an IoT section and a web app section. First, let's look at the IoT component.
@@ -538,7 +537,7 @@ aws iot attach-principal-policy --policy-name '<YOUR_IOT_POLICY_NAME>' --princip
 ![AWS Amplify Attach Policy](./amplify_pictures/AmplifyAttachPolicy.png)
 
 5. According to the Amplify Docs:
->For your Cognito Authenticated Role to be able to interact with AWS IoT it may be necessary to update its permissions, if you haven’t done this before.
+>For your Cognito Authenticated Role to be able to interact with AWS IoT it may be necessary to update its permissions, if you haven't done this before.
 
 To do this, log into the AWS Console and choose CloudFormation from the list of services. Locate the parent stack of your Amplify application, if this is your first time using Amplify, the parent stack will be the only Amplify stack that does not say "NESTED". You can also choose based on creation time. The description should say "Root stack for the Amplify AWS CloudFormation provider.
 
@@ -688,10 +687,10 @@ Once your application is finished publishing, you can go to your site using the 
 ![AWS Amplify URL](./amplify_pictures/AmplifyURL.png)
 
 You now have a web application in the cloud that can communicate bidirectionally with your ESP32. This idea can be scaled into any type of IoT application. The possibilities are endless! Next steps include but are not limited to:
--Connecting sensors to receive real time data from your ESP32 on your web application
--Interpreting the return messages on the ESP32 to produce some desired behavior
--Including more IoT devices that publish to the same topic
--Creating your own front end to show trends over time of your IoT data
+- Connecting sensors to receive real time data from your ESP32 on your web application
+- Interpreting the return messages on the ESP32 to produce some desired behavior
+- Including more IoT devices that publish to the same topic
+- Creating your own front end to show trends over time of your IoT data
 
 ## Video Guide
 To see a step-by-step video guide, see this [video](https://amazon.awsapps.com/workdocs/index.html#/document/819bd727b0753e2c342dafda6d2796e5e6c541140644cdc9c6a92bb162f45a39).
