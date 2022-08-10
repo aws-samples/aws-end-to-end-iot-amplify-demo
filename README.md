@@ -82,7 +82,7 @@ This section will cover everything you need to setup your ESP32 to communicate w
   
 14.	Give the policy a name and click “Advanced mode”  
   
-15.	Click in the “Add statements” box and add the following code, replacing ACCOUNT_ID and REGION with your account ID and region (also replace ESP32 with the name of your device if you used a different name).   
+15.	Click in the “Add statements” box and add the following code, replacing ACCOUNT_ID, REGION, SUBSCRIPTION_TOPIC_NAME, and PUBLISH_TOPIC_NAME with your account ID, Region, and topic names.   
 ```JSON
 {
   "Version": "2012-10-17",
@@ -90,22 +90,22 @@ This section will cover everything you need to setup your ESP32 to communicate w
     {
       "Effect": "Allow",
       "Action": "iot:Connect",
-      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:client/*"
+      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:client/${iot:Connection.Thing.ThingName}"
     },
     {
       "Effect": "Allow",
       "Action": "iot:Subscribe",
-      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:topicfilter/*"
+      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:topicfilter/SUBSCRIPTION_TOPIC_NAME"
     },
     {
       "Effect": "Allow",
       "Action": "iot:Receive",
-      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:topic/*"
+      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:topic/SUBSCRIPTION_TOPIC_NAME"
     },
     {
       "Effect": "Allow",
       "Action": "iot:Publish",
-      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:topic/*"
+      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:topic/PUBLISH_TOPIC_NAME"
     }
   ]
 }
@@ -114,7 +114,7 @@ This section will cover everything you need to setup your ESP32 to communicate w
 ![AWS IoT Core Policy](./iot_pictures/IoTCorePolicy.png)  
 Note: your region should be formatted the same way it appears in the AWS console (ex. us-west-2). However, your Account ID should not include any hyphens or your device will not be able to connect to AWS IoT Core.  
   
-This policy basically allows any resource registered in your account to connect to AWS and subscribe, receive, and publish messages to topics in AWS IoT Core. This allows our IoT device to connect because we have registered it as a "thing" in AWS IoT Core. It will also allow other services to publish to same topics, as we will see later.    
+This policy allows devices with this attached policy to connect to AWS and subscribe, receive, and publish messages to topics in AWS IoT Core. This allows our IoT device to connect because we have registered it as a "thing" in AWS IoT Core and attached the above policy. It will also allow other services to publish to the same topics, as we will see later.    
   
 16.	Click “Create” - you will be redirected to Policies homepage.  
   
