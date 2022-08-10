@@ -111,7 +111,7 @@ This section will cover everything you need to setup your ESP32 to communicate w
 }
 ```  
   
-![AWS IoT Core Policy](./iot_pictures/IoT%20Core%20Create%20Policy%20with%20any%20resource%20in%20account.png)  
+![AWS IoT Core Policy](./iot_pictures/IoTCorePolicy.png)  
 Note: your region should be formatted the same way it appears in the AWS console (ex. us-west-2). However, your Account ID should not include any hyphens or your device will not be able to connect to AWS IoT Core.  
   
 This policy basically allows any resource registered in your account to connect to AWS and subscribe, receive, and publish messages to topics in AWS IoT Core. This allows our IoT device to connect because we have registered it as a "thing" in AWS IoT Core. It will also allow other services to publish to same topics, as we will see later.    
