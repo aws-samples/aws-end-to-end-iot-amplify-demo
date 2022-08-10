@@ -90,22 +90,22 @@ This section will cover everything you need to setup your ESP32 to communicate w
     {
       "Effect": "Allow",
       "Action": "iot:Connect",
-      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:*"
+      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:client/*"
     },
     {
       "Effect": "Allow",
       "Action": "iot:Subscribe",
-      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:*"
+      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:topicfilter/*"
     },
     {
       "Effect": "Allow",
       "Action": "iot:Receive",
-      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:*"
+      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:topic/*"
     },
     {
       "Effect": "Allow",
       "Action": "iot:Publish",
-      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:*"
+      "Resource": "arn:aws:iot:REGION:ACCOUNT_ID:topic/*"
     }
   ]
 }
