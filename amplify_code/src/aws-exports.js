@@ -7,7 +7,11 @@ const awsmobile = {
     "aws_cognito_region": "us-west-2",
     "aws_user_pools_id": "us-west-2_FHcBMjfC6",
     "aws_user_pools_web_client_id": "lc2la0msvfu0jjc474b77c1nj",
-    "oauth": {}
+    "oauth": {},
+    "PubSub": {
+        "aws_pubsub_region": "us-west-2",
+        "aws_pubsub_endpoint": "wss://xxxxxxxxxxxxx.iot.us-west-2.amazonaws.com/mqtt"
+    }
 };
 
 
