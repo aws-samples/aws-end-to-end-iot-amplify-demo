@@ -18,13 +18,19 @@ Amplify.addPluggable(new AWSIoTProvider({
   aws_pubsub_endpoint: 'wss://xxxxxxxxxxxxx.iot.<YOUR-IOT-REGION>.amazonaws.com/mqtt',
 }));
 
+function escapeHtml(text) {
+  var div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
 async function ProcessMessage(payload) {
   console.log('Message received', payload);
   let topic=payload.value[Object.getOwnPropertySymbols(payload.value)[0]];
   let time=payload.value.time;
   let sensor_a0=payload.value.sensor_a0;
   let scrollBox = document.getElementById('incomingMsg');
-  scrollBox.innerHTML += "<b>NEW MESSAGE: </b><br></br> Topic: " + topic + "<br></br> Time: " + time + "<br></br> Sensor_a0: " + sensor_a0 + "<br></br>";
+  scrollBox.innerHTML += "<b>NEW MESSAGE: </b><br> Topic: " + escapeHtml(topic) + "<br> Time: " + escapeHtml(time) + "<br> Sensor_a0: " + escapeHtml(sensor_a0) + "<br>";
   scrollBox.scrollTop = scrollBox.scrollHeight;
 }
 
@@ -35,7 +41,7 @@ async function SendMessage() {
   await PubSub.publish(PUB_TOPIC, { msg: payload });
   document.getElementById('returnMsg').innerHTML = '<h3 style="color: green">Message sent!</h3>';
   let sentMsgBox = document.getElementById('sentMsg');
-  sentMsgBox.innerHTML += payload + "<br></br>";
+  sentMsgBox.innerHTML += escapeHtml(payload) + "<br>";
   sentMsgBox.scrollTop = sentMsgBox.scrollHeight;
 }
 
